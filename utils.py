@@ -1,5 +1,6 @@
 import numpy as np
 import cv2
+import os
 
 
 def quick_plot(x):
@@ -84,3 +85,30 @@ def draw_umich_gaussian(heatmap, center, radius, k=1):
     if min(masked_gaussian.shape) > 0 and min(masked_heatmap.shape) > 0:  # TODO debug
         np.maximum(masked_heatmap, masked_gaussian * k, out=masked_heatmap)
     return heatmap
+
+
+def preprocess_recognition(img, size=(96, 96)):
+    # if len(img.shape) == 4:
+    #     for i in range(img.shape[0]):
+    #         if len(img[i, ::]) != 3:
+    #             img_ = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+    #         img = cv2.resize(img, size)
+    #
+    if len(img.shape) != 3:
+        img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
+    img = cv2.resize(img, size)
+    img = img.astype(np.float32) / 255
+    return img
+
+
+def get_images_of_faces():
+    dir = 'data/infer_faces/'
+    files = os.listdir(dir)
+    imgs = []
+    names = []
+    for file in files:
+        img = cv2.imread(dir + file)
+        img = preprocess_recognition(img)
+        imgs.append(img)
+        names.append(file.split('.')[0])
+    return np.stack(imgs), names

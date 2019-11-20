@@ -22,7 +22,7 @@ faces, names = get_images_of_faces()
 face_vectors = recognition(faces)
 
 # main loop
-vid = cv2.VideoCapture('data/other/vid.mp4')
+vid = cv2.VideoCapture(0)
 # out = cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc(*'DIVX'), 30.0, (1194, 570))
 while vid.isOpened():
 

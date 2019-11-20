@@ -13,8 +13,8 @@ recognition = Recognizer(training=False)
 cpkt_dir = 'checkpoints/'
 face_dir = '/faces/'
 
-backbone.load_weights('/checkpoints/' + 'backbone')
-detection.load_weights('/checkpoints/' + 'detection')
+backbone.load_weights(cpkt_dir + 'backbone')
+detection.load_weights(cpkt_dir + 'detection')
 recognition.load_weights(cpkt_dir + 'recognition')
 
 # load face vectors

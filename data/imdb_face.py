@@ -106,6 +106,7 @@ def data_generator(size=(96, 96), batch_size=1):
             img = cv2.imread(save_face_path + '/' + str(data_point[i].index[0]) + '.jpg')
 
             # augmentation
+            # TODO: see if doing this on batch would work
             img = tf.keras.preprocessing.image.random_rotation(img, 40, row_axis=0, col_axis=1, channel_axis=2)
             img = tf.keras.preprocessing.image.random_shear(img, 30, row_axis=0, col_axis=1, channel_axis=2)
             img = tf.keras.preprocessing.image.random_brightness(img, (0.2, 1.6))

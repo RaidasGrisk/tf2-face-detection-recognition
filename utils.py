@@ -4,7 +4,7 @@ import os
 
 
 def quick_plot(x):
-    cv2.imshow('org', x.astype(np.uint8))
+    cv2.imshow('', x.astype(np.uint8))
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -88,12 +88,6 @@ def draw_umich_gaussian(heatmap, center, radius, k=1):
 
 
 def preprocess_recognition(img, size=(96, 96)):
-    # if len(img.shape) == 4:
-    #     for i in range(img.shape[0]):
-    #         if len(img[i, ::]) != 3:
-    #             img_ = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
-    #         img = cv2.resize(img, size)
-    #
     if len(img.shape) != 3:
         img = cv2.cvtColor(img, cv2.COLOR_GRAY2RGB)
     img = cv2.resize(img, size)
@@ -101,8 +95,7 @@ def preprocess_recognition(img, size=(96, 96)):
     return img
 
 
-def get_images_of_faces():
-    dir = 'data/infer_faces/'
+def get_images_of_faces(dir='data/infer_faces/'):
     files = os.listdir(dir)
     imgs = []
     names = []

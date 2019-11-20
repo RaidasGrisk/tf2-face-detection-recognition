@@ -44,7 +44,7 @@ for x, y in data_gen:
     if c % 20 == 0:
         overlay = np.tile(y_[0, :, :, np.newaxis], [1, 1, 3]) * 500
         combined = cv2.addWeighted(x.astype('uint8')[0, :, :, :], 0.4, overlay.astype('uint8'), 0.3, 1)
-        quick_plot(combined)
+        # quick_plot(combined)
 
     # save
     if c % save_iter == 0:

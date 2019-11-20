@@ -21,8 +21,9 @@ The project includes two models:
     ├── checkpoints/                    # dir for model weights
     ├── data/                           # dir for data storing and generation 
     │   ├── infer_faces/                # directory for storing pictures of faces to detect during inference
-    │   ├── imdb_face.py                # imdb dataset utils
-    │   └── wider_face.py               # wider face dataset utils
+    │   ├── other/                      # other none code files video/gifs etc.
+    │   ├── imdb_face.py                # imdb dataset utils (used for recognition training)
+    │   └── wider_face.py               # wider face dataset utils (used for detection training)
     ├── models/                         # dir for model definitions
     │   ├── detection.py                # -
     │   ├── recognition.py              # -
@@ -30,7 +31,7 @@ The project includes two models:
     ├── infer.py                        # -
     ├── train_detection.py              # -
     ├── train_recognition.py            # -
-    ├── utils.py                        # utility functions
+    ├── utils.py                        # -
     └── README.md                       # -
 ```
 
@@ -45,16 +46,15 @@ conda activate tf2-face-detection-recognition
 ```
 
 ## Inference
-Place the images of people faces inside data/infer_data
+Place images of people's faces inside data/infer_faces (see examples inside this dir). These images will be encoded and compared with faces detected during inference.
 ```
 python infer.py
 ```
 
 ## Training
-Explore train_detection.py train_recognition.py and data directory.  
+Explore train_detection.py train_recognition.py data/imdb_face.py data/wider_face.py files.
 
-To re-train or continue training the models you would need datasets   
-which are not included as part of this git.  
+To re-train or continue training the models you would need datasets which are not included as part of this git.  
 
-Detection model is trained on [wider face dataset](http://shuoyang1213.me/WIDERFACE/)  
-Recognition model is trained on [imdb face dataset](https://github.com/fwang91/IMDb-Face)
+Detection model is trained on [wider face dataset](http://shuoyang1213.me/WIDERFACE/).  
+Recognition model is trained on [imdb face dataset](https://github.com/fwang91/IMDb-Face).

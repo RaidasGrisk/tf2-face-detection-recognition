@@ -35,7 +35,10 @@ The project includes two models:
     └── README.md                       # -
 ```
 
-## Installation
+## Installation and dependencies
+
+To run this project the following libraries are required: tensorflow, numpy, opencv, pillow, pandas.  
+Run this on your own env or create a new one using [environment.yml](environment.yml)
 
 ```
 git clone https://github.com/RaidasGrisk/tf2-face-detection-recognition.git  

@@ -3,8 +3,7 @@
 The project includes two models:
 
 - **Face detection.** 
-  Detection is done by outputing a heatmap of faces.  
-  Using this heatmap bounding boxes are created.
+  Detection is done by outputing a heatmap of faces. Using this heatmap bounding boxes are created.
    
 - **Face recognition.**
   Detected faces are cropped using the bounding boxes and encoded into a vector of 126 values.
@@ -14,19 +13,19 @@ The project includes two models:
 ## Project structure
 ```
     .
-    ├── checkpoints/                    # directory for model weights
-    ├── data/                           # data storing and generation 
+    ├── checkpoints/                    # dir for model weights
+    ├── data/                           # dir for data storing and generation 
     │   ├── infer_faces/                # directory for storing pictures of faces to detect during inference
     │   ├── imdb_face.py                # imdb dataset utils
     │   └── wider_face.py               # wider face dataset utils
-    ├── models/                         # model definitions
+    ├── models/                         # dir for model definitions
     │   ├── detection.py                # -
     │   ├── recognition.py              # -
     │   └── face_align.py               # not implemented
     ├── infer.py                        # -
     ├── train_detection.py              # -
     ├── train_recognition.py            # -
-    ├── utils.py                        # various utility functions
+    ├── utils.py                        # utility functions
     └── README.md                       # -
 ```
 

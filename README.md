@@ -7,7 +7,7 @@ The project includes two models:
    
 - **Face recognition.**
   Detected faces are cropped using the bounding boxes and encoded into a vector of 126 values.
-  This vector is then compared to the vectors of faces stored in data/infer_data.
+  This vector is then compared to the vectors of faces stored in data/infer_faces.
 
 :heavy_exclamation_mark: Performance of the detection model is reasonable but I'm still strugling with recognition model.
 

@@ -55,7 +55,8 @@ python infer.py
 ```
 
 ## Training
-Explore train_detection.py train_recognition.py data/imdb_face.py data/wider_face.py files.
+For detection model explore train_detection.py and data/wider_face.py files.
+Fore recognition model explore train_recognition.py data/imdb_face.py files.
 
 To re-train or continue training the models you would need datasets which are not included as part of this git.  
 
